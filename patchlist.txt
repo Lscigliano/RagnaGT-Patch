@@ -1,1 +1,2 @@
 // ID Arquivo [sha256]  - gerado por make_patch.py
+1 2026-10-02_patcher.ini 7d7d98cfbb1726a07482019f5fd284401222335cdc350a67524d6b50fbf814aa
