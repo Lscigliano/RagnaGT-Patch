@@ -4,6 +4,7 @@
 Tudo que o patcher baixa. O `RagnaGT Patcher.exe` lê `patchlist.txt` e aplica os patches novos.
 
 - `patchlist.txt` — `ID arquivo sha256` (gerado por `make_patch.py`)
+- `episode.txt` — uma linha com o episódio atual, mostrada no patcher (ex.: `Episódio atual: Ayothaya`)
 - `news.txt` — `dd/MM|Título` (painel de notícias)
 - `patcher_version.txt` — versão do patcher (maior que a instalada = auto-update; coloque também `RagnaGT Patcher.exe` na raiz)
 - `patches/` — `.gpf` (mesclado no coresnovas.grf) ou arquivos soltos (copiados p/ a pasta do cliente)
