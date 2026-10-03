@@ -3,6 +3,7 @@
 
   python make_patch.py novos              -> empacota a pasta novos (data/...) em patches/AAAA-MM-DD_nome.gpf
   python make_patch.py arquivo.exe        -> copia o arquivo solto para patches/ (vai para a pasta do cliente)
+  python make_patch.py ragnagt.lua --dest System  -> arquivo solto que vai para a subpasta System do cliente
   opcoes: --name nome   (padrao: nome da pasta/arquivo)
 
 Depois: git add -A && git commit && git push  (o patcher le direto do repositorio).
@@ -32,7 +33,7 @@ def build_gpf(folder, out):
     return len(entries)
 
 def main():
-    ap = argparse.ArgumentParser(); ap.add_argument('src'); ap.add_argument('--name')
+    ap = argparse.ArgumentParser(); ap.add_argument('src'); ap.add_argument('--name'); ap.add_argument('--dest', default='', help='subpasta do cliente para arquivo solto, ex.: System')
     a = ap.parse_args()
     os.makedirs(os.path.join(ROOT, 'patches'), exist_ok=True)
     name = a.name or os.path.splitext(os.path.basename(os.path.abspath(a.src)))[0]
@@ -41,7 +42,8 @@ def main():
         fn = f"{day}_{name}.gpf"; dest = os.path.join(ROOT, 'patches', fn)
         print(build_gpf(a.src, dest), "arquivos empacotados")
     else:
-        fn = f"{day}_{os.path.basename(a.src)}"; dest = os.path.join(ROOT, 'patches', fn)
+        sub = a.dest.replace(chr(92), '/').strip('/').replace('/', '__')
+        fn = f"{day}_{sub + '__' if sub else ''}{os.path.basename(a.src)}"; dest = os.path.join(ROOT, 'patches', fn)
         shutil.copy(a.src, dest)
     sha = hashlib.sha256(open(dest, 'rb').read()).hexdigest()
     pl = os.path.join(ROOT, 'patchlist.txt')
