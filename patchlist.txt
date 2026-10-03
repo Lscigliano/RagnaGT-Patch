@@ -1,4 +1,5 @@
 // ID Arquivo [sha256]  - gerado por make_patch.py
 1 2026-10-02_patcher.ini 7d7d98cfbb1726a07482019f5fd284401222335cdc350a67524d6b50fbf814aa
-2 2026-10-03_System__ragnagt.lua c203ade1f199260f9ea0e0b9f3e81086b541b8f3e33179a3f7d4a99410ed49a8
+2 2026-10-03_System__ragnagt.lua aebba2c8e4db9d50ce7c61c15a869bfe165deadca872361f1d75f2eed521d1a9
 3 2026-10-03_System__iteminfo_true.lub c11db385ab54f2946538efe1a2ad82d00e6766f99d9f5b79a88982c2b0c0b3a2
+4 2026-10-03_System__ragnagt.lua aebba2c8e4db9d50ce7c61c15a869bfe165deadca872361f1d75f2eed521d1a9
